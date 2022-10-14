@@ -14,6 +14,9 @@ namespace Pong
 
         Texture2D rightBar, leftBar;
         Texture2D ball;
+        Texture2D middleLine;
+
+        SpriteFont scoreFont;
 
         Vector2 rightPosition;
         Vector2 leftPosition;
@@ -29,6 +32,9 @@ namespace Pong
 
         SoundEffect goalSound, tapSound;
         Song backSound;
+
+        int scoreEsq = 0;
+        int scoreDir = 0;
 
         public Game1()
         {
@@ -49,7 +55,9 @@ namespace Pong
             _spriteBatch = new SpriteBatch(GraphicsDevice);
             rightBar = Content.Load<Texture2D>("assets/bar");
             leftBar = Content.Load<Texture2D>("assets/bar");
+            middleLine = Content.Load<Texture2D>("assets/middleBar");
             ball = Content.Load<Texture2D>("assets/ball");
+            scoreFont = Content.Load<SpriteFont>("assets/scoreFont");
 
             goalSound = Content.Load <SoundEffect>("assets/goal");
             tapSound = Content.Load <SoundEffect>("assets/tap");
@@ -109,11 +117,19 @@ namespace Pong
             if(ballPosition.Y < view.Y || ballPosition.Y + ballSize > view.Height) 
             {
                 ballVelocity.Y *= -1;
-            }            
-            
-            if(ballPosition.X < view.X || ballPosition.X + ballSize > view.Width) 
+            }
+
+            //Se a bola passar para a esquerda o score da esquerada aumenta se não o da direita aumenta
+            if (ballPosition.X < view.X) scoreDir++;
+            if (ballPosition.X + ballSize > view.Width) scoreEsq++;
+
+            //Verificação se a bola passou ou não
+            if (ballPosition.X < view.X || ballPosition.X + ballSize > view.Width) 
             {
                 ballPosition = new Vector2(view.Width / 2 - ballSize, view.Height / 2 - ballSize);
+
+
+
 
                 if(ballVelocity.X > 0)
                 {
@@ -159,11 +175,19 @@ namespace Pong
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
             // TODO: Add your drawing code here
+            //_spriteBatch.Begin();
             _spriteBatch.Begin();
+
+
+
 
             _spriteBatch.Draw(leftBar, leftPosition, Color.White);
             _spriteBatch.Draw(rightBar, rightPosition, Color.White);
             _spriteBatch.Draw(ball, ballPosition, Color.White);
+
+            //_spriteBatch.DrawString(scoreFont, "Hello, World", new Vector2(view.Width / 2 - 20, view.Y), Color.Black);
+             _spriteBatch.DrawString(scoreFont, $"{scoreEsq} | {scoreDir}", new Vector2(view.Width/2 - 20,0), Color.Black, 0f, new Vector2(0, 0), 1f, SpriteEffects.None, 0f);
+
 
             _spriteBatch.End();
 
