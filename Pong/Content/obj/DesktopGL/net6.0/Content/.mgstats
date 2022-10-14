@@ -1,0 +1,6 @@
+Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
+"C:/Users/julia/source/repos/MonoGameProjects/Pong/Pong/Content/assets/back.mp3","C:/Users/julia/source/repos/MonoGameProjects/Pong/Pong/Content/bin/DesktopGL/Content/assets/back.xnb","SongProcessor","SongContent",2285401,122,1.4133877
+"C:/Users/julia/source/repos/MonoGameProjects/Pong/Pong/Content/assets/ball.png","C:/Users/julia/source/repos/MonoGameProjects/Pong/Pong/Content/bin/DesktopGL/Content/assets/ball.xnb","TextureProcessor","Texture2DContent",96,1685,0.0227041
+"C:/Users/julia/source/repos/MonoGameProjects/Pong/Pong/Content/assets/bar.png","C:/Users/julia/source/repos/MonoGameProjects/Pong/Pong/Content/bin/DesktopGL/Content/assets/bar.xnb","TextureProcessor","Texture2DContent",113,16085,0.0018743
+"C:/Users/julia/source/repos/MonoGameProjects/Pong/Pong/Content/assets/goal.wav","C:/Users/julia/source/repos/MonoGameProjects/Pong/Pong/Content/bin/DesktopGL/Content/assets/goal.xnb","SoundEffectProcessor","SoundEffectContent",528246,528169,0.1274728
+"C:/Users/julia/source/repos/MonoGameProjects/Pong/Pong/Content/assets/tap.wav","C:/Users/julia/source/repos/MonoGameProjects/Pong/Pong/Content/bin/DesktopGL/Content/assets/tap.xnb","SoundEffectProcessor","SoundEffectContent",52178,51553,0.1192921
